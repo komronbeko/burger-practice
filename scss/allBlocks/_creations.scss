@@ -1,0 +1,117 @@
+.creations {
+    @include container;
+    padding: 180px 0;
+
+    &__intro {
+        @include flex(row, space-between);
+        margin-bottom: 80px;
+
+        &__heading {
+            h3 {
+                font-size: 48px;
+                line-height: 48px;
+            }
+        }
+
+        &__btn {
+            padding: 13px 43px 13px 38px;
+            border: 1px solid black;
+
+            a {
+                color: black;
+                font-size: 14px;
+                line-height: 14px;
+                text-decoration: none;
+            }
+        }
+
+        &__btn:hover {
+            background-color: black;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    &__boxes {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 30px;
+        div {
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            h4{
+                font-size: 32px;
+                line-height: 32px;
+                width: 50%;
+                color: white;
+                position: absolute;
+                left: 40px;
+                bottom: 32px;
+            }
+        }
+        &--1{
+            background-image: url(../../images/Bitmap1.png);
+        }
+        &--2{
+            background-image: url(../../images/Bitmap2.png);
+        }
+        &--3{
+            background-image: url(../../images/Bitmap3.png);
+        }
+        &--4{
+            background-image: url(../../images/Bitmap\ 4.png);
+        }
+        &--5{
+            background-image: url(../../images/Bitmap5.png);
+        }
+        &--6{
+            background-image: url(../../images/Bitmap6.png);
+        }
+        &--7{
+            background-image: url(../../images/Bitmap7.png);
+        }
+        &--8{
+            background-image: url(../../images/Bitmap8.png);
+        }
+    }
+}
+
+@media (max-width: 960px){
+    .creations{
+        @include container(820px);
+        &__boxes{
+            grid-template-columns: repeat(3, auto);
+        }
+    }
+}
+@media (max-width: 768px){
+    .creations{
+        @include container(668px);
+        &__intro{
+            justify-content: center;
+            margin-bottom: 60px;
+            &__btn{
+                display: none;
+            }
+        }
+        &__boxes{
+            grid-template-columns: repeat(2, auto);
+        }
+    }
+}
+@media (max-width: 470px){
+    .creations{
+        @include container(810px);
+        &__intro{
+            margin-bottom: 30px;
+        }
+        &__boxes{
+            grid-template-columns: auto;
+        }
+    }
+}
